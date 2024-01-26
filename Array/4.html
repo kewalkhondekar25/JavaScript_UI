@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var cityNames = ["Pune", "Nagpur"];
+
+        function handleAddCity() {
+            var addCity = document.getElementById("txtCity").value;
+            cityNames.push(addCity);
+            loadCities();
+            alert(`${addCity} added`);
+            document.getElementById("txtCity").value = "";
+        };
+
+        function bodyLoad() {
+            loadCities();
+        }
+
+        function loadCities() {
+            document.querySelector("select").innerHTML = "";
+            cityNames.sort();
+            for (var cities of cityNames) {
+                var option = document.createElement("option");
+                option.text = cities;
+                document.querySelector("select").appendChild(option);
+            }
+        }
+
+        function removeCity() {
+            var selectedCity = document.querySelector("select").value;
+            var selectedCityIndex = cityNames.indexOf(selectedCity);
+            console.log(selectedCityIndex);
+            cityNames.splice(selectedCityIndex, 1);
+            alert(`${selectedCity} removed`);
+            loadCities();
+
+        }
+        console.log(cityNames);
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <div>
+        <input type="text" id="txtCity">
+        <button onclick="handleAddCity()">Add</button>
+    </div>
+    <div>
+        <h3>Cities</h3>
+        <select>
+
+        </select>
+        <button onclick="removeCity()">Remove</button>
+    </div>
+</body>
+
+</html>

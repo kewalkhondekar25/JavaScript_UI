@@ -1,0 +1,20 @@
+<script>
+
+    //let
+    "use strict"
+    function f1(){
+        let x;//function-block scope
+        x = 10;
+        if(x == 10)
+        {
+            let y = 20;//block scope
+            //var y = 20;
+            document.write("value of y in block scope is: " + y);
+        }
+        document.write("x: " + x);
+        //document.write("x: " + x + "<br>" + "y: " + y);
+
+        //document.write(x);
+    }
+    f1();
+</script>

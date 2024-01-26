@@ -1,0 +1,105 @@
+<!-- 59 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        var products = [
+            {
+                name: "headphone",
+                price: 1500,
+                src: "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            },
+            {
+                name: "mobile phone",
+                price: 45000,
+                src: "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=600"
+            },
+            {
+                name: "laptop",
+                price: 145000,
+                src: "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&w=600"
+            },
+
+        ];
+
+        function bodyLoad() {
+            for (var product of products) {
+                var tr = document.createElement("tr");
+
+                var tdName = document.createElement("td");
+                var tdPrice = document.createElement("td");
+                var tdPriview = document.createElement("td");
+
+                var img = document.createElement("img");
+                img.src = product.src;
+                img.height = "200";
+                img.width = "200";
+
+                tdName.innerHTML = product.name;
+                tdPrice.innerHTML = product.price;
+                tdPriview.appendChild(img);
+
+                tr.appendChild(tdName);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdPriview);
+
+                document.querySelector("tbody").appendChild(tr);
+            }
+        }
+
+        function bodyLoad2() {
+            for (var product of products) {
+                var card = document.createElement("div");
+                card.className = "card w-25 m-2 p-2";
+                card.innerHTML = `
+                    <img src=${product.src} class="card-image-top"/>
+                    <div class="card-header">
+                        <h2>${product.name}</h2>
+                    </div>
+                    <div class="card-body">
+                        ${product.price}
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-danger w-100">
+                            Add to Cart    
+                        </button>
+                    </div>
+                `;
+                document.getElementById("cards").appendChild(card);
+            }
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad2()">
+    <h3>Array of Objects</h3>
+    <!-- <div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div> -->
+    <h3>Cards</h3>
+    <div id="cards" class="d-flex flex-wrap">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!-- 
+charAt()
+charCodeAt()
+Slice()
+substr()
+substring() 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var message = "welcome to javascript";
+        //document.write(message.slice(0, 12));
+        document.write(message.substr(7, 8));
+
+        function changeCase(){
+            var userName = document.getElementById("txtName").value;
+            var firstChar = userName.charAt(0);
+            var restChar = userName.substring(1);
+            var sentence = firstChar.toUpperCase() + restChar.toLowerCase();
+            document.getElementById("txtName").value = sentence;
+        }
+
+        function verifyCapital(){
+            var userName2 = document.getElementById("txtName2").value;
+            var msg = document.querySelector("p");
+            if(userName2.charCodeAt(0) >= 65 && userName2.charCodeAt(0) <= 90)
+            {
+                msg.innerHTML = "Verified".fontcolor('green');
+            }else
+            {
+                msg.innerHTML = "First Letter must be capital".fontcolor('red');
+            }
+        }
+
+        function submitClick(){
+            var email = document.getElementById("email").value;
+            var eMsg = document.getElementById("emailPara");
+            var atPos = email.indexOf("@");
+            if(atPos <= 2)
+            {
+                eMsg.innerHTML = "Invalid Email".fontcolor('red');
+            }else
+            {
+                eMsg.innerHTML = "Email Verified".fontcolor('green');
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>String Manipulation</legend>
+        <input type="text" id="txtName" placeholder="Enter name in any order" onblur="changeCase()">
+    </fieldset>
+
+    <fieldset>
+        <legend>String Manipulation</legend>
+        <input type="text" id="txtName2" placeholder="Enter name in Captial" onkeyup="verifyCapital()">
+        <p id="para"></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Email Verification</legend>
+        <input type="text" id="email" placeholder="Enter your email" onkeyup="submitClick()">
+        <p id="emailPara"></p>
+        <button onclick="submitClick()">Submit</button>
+    </fieldset>
+
+    
+</body>
+</html>

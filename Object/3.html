@@ -1,0 +1,42 @@
+<!-- 59 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var data = [
+            {
+                name : "electronics",
+                products : ["mobile", "headphones"]
+            },
+            {
+                name : "footwares",
+                products : ["nike shoes", "puma shoes"]
+            }
+        ];
+
+        function bodyLoad(){
+            for(var item of data){
+                var li = document.createElement("li");
+                li.innerHTML = item.name;
+
+                for(var items of item.products){
+                    var ul = document.createElement("ul");
+                    var innerli = document.createElement("li");
+                    innerli.innerHTML = items;
+                    ul.appendChild(innerli);
+                    li.appendChild(ul);
+                    document.querySelector("ol").appendChild(li);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <ol>
+
+    </ol>
+</body>
+</html>

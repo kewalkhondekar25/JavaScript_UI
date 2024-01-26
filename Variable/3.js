@@ -1,0 +1,7 @@
+
+    
+    "use strict"
+    x = 10;
+    document.write("x: " + x );
+    var x;//hoisting
+

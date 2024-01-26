@@ -1,0 +1,36 @@
+<!-- String formating -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function verifyName(){
+            var userName = document.getElementById("txtName").value;
+            var msg1 = document.getElementById("msg");
+            if(userName.length >= 3 && userName.length <= 10)
+            {
+                msg1.innerHTML = "User Name Verified".bold().fontcolor('green');
+            }else
+            {
+                msg1.innerHTML = "Invalid user Name".bold().fontcolor('red');
+            }
+        }
+
+        function changeCase(){
+            var userName = document.getElementById("txtName").value;
+            document.getElementById("txtName").value = userName.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    <h2>Register User</h2>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" id="txtName" onkeyup="verifyName()" onblur="changeCase()"></dd>
+        <dd><div id="msg"></div></dd>
+    </dl>
+    <button onclick="verifyName()">Submit</button>
+</body>
+</html>

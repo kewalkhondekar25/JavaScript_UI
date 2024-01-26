@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function submitClick(){
+            var presentAge = document.getElementById("selectAge").value;
+            document.write(`you age will be ${parseInt(presentAge) + 1} next year`);    
+        }
+    </script>
+</head>
+<body>
+    <h1>Age Example</h1>
+    <dl>
+        <dt>Select your age</dt>
+        <dl>
+            <select id="selectAge">
+                <option value="17">17</option>
+                <option value="24">24</option>
+                <option value="99">99</option>
+            </select>
+        </dl>
+        <button onclick="submitClick()">Submit</button>
+    </dl>
+</body>
+</html>
