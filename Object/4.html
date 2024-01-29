@@ -108,7 +108,40 @@
 
         }
         function addToCartClick(id){
-            alert(id);
+            fetch(`https://fakestoreapi.com/products/${id}`)
+            .then(function(res){
+                return res.json();
+            })
+            .then(function(data){
+                cartItems.push(data);
+                alert("Items added to Cart")
+                getCartItemsCount();
+                showCartItems();
+            })
+        }
+        function showCartItems(){
+            document.querySelector("tbody").innerHTML = "";
+            for(var items of cartItems){
+                var tr = document.createElement("tr");
+                var tdName = document.createElement("td");
+                var tdPreview = document.createElement("td");
+                var tdPrice = document.createElement("td");
+
+                var tdImg = document.createElement("img");
+                tdImg.src = items.image;
+                tdImg.height = "100";
+                tdImg.width = "100";
+
+                tdName.innerHTML = items.title;
+                tdPreview.appendChild(tdImg);
+                tdPrice.innerHTML = items.price;
+
+                tr.appendChild(tdName);
+                tr.appendChild(tdPreview);
+                tr.appendChild(tdPrice);
+
+                document.querySelector("tbody").appendChild(tr);
+            }
         }
     </script>
 </head>
@@ -128,6 +161,18 @@
             <button class="btn btn-warning">
                 Your Cart <span id="cartCount"></span>
             </button>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Preview</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
