@@ -89,6 +89,7 @@
 
             loadAllProducts();
             loadProductsByCategory();
+            getCartItemsCount();
         }
 
         function categoryChange() {
@@ -98,6 +99,13 @@
             } else {
                 loadProductsByCategory(selectValue);
             }
+        }
+        var cartItems = [];
+        var count = 0;
+        function getCartItemsCount(){
+            count = cartItems.length;
+            document.getElementById("cartCount").innerHTML = count;
+
         }
         function addToCartClick(id){
             alert(id);
@@ -118,7 +126,7 @@
         </div>
         <div class="col 4">
             <button class="btn btn-warning">
-                Your Cart <span>[]</span>
+                Your Cart <span id="cartCount"></span>
             </button>
         </div>
     </div>
