@@ -33,7 +33,7 @@
                                 <p>${items.price}</p>
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-danger w-100">Add to Cart</button>
+                                <button onclick="addToCartClick(${items.id})" class="btn btn-danger w-100">Add to Cart</button>
                             </div>
                         `;
                         document.getElementById("display").appendChild(card);
@@ -64,7 +64,7 @@
                                 <p>${items.price}</p>
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-danger w-100">Add to Cart</button>
+                                <button onclick="addToCartClick(${items.id})" class="btn btn-danger w-100">Add to Cart</button>
                             </div>
                         `;
                         document.getElementById("display").appendChild(card);
@@ -99,6 +99,9 @@
                 loadProductsByCategory(selectValue);
             }
         }
+        function addToCartClick(id){
+            alert(id);
+        }
     </script>
 </head>
 
@@ -112,6 +115,11 @@
         </div>
         <div class="col-6 d-flex flex-wrap overflow-auto" style="height: 700px;" id="display">
 
+        </div>
+        <div class="col 4">
+            <button class="btn btn-warning">
+                Your Cart <span>[]</span>
+            </button>
         </div>
     </div>
 </body>
