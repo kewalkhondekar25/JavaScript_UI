@@ -134,7 +134,7 @@
 
                 tdName.innerHTML = items.title;
                 tdPreview.appendChild(tdImg);
-                tdPrice.innerHTML = items.price;
+                tdPrice.innerHTML = ` &#8377; ${items.price}`;
 
                 tr.appendChild(tdName);
                 tr.appendChild(tdPreview);
@@ -166,7 +166,7 @@
                     <tr>
                         <th>Product Name</th>
                         <th>Preview</th>
-                        <th>Price</th>
+                        <th>&#8377; Price</th>
                     </tr>
                 </thead>
                 <tbody>
