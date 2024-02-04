@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var names = [
+            {
+                name: "sainath",
+                age: 24
+            },
+            {
+                name: "kewal",
+                age: 25
+            }
+        ];
+        function loadBody(){
+            for(var name of names){
+                var li = document.createElement("li");
+                li.innerHTML = name.age;
+                li.innerHTML = name.name;
+                document.querySelector("ol").appendChild(li);
+            }
+        }
+    </script>
+</head>
+<body onload="loadBody()">
+    <ol>
+    
+    </ol>
+</body>
+</html>

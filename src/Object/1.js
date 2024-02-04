@@ -16,3 +16,18 @@ let tv = {
 }
 
 tv.print();
+
+
+let obj = {
+    "name" : "sainath",
+    "age" : 23,
+    "married" : false,
+    "city" : "mumbai",
+    print : function(){
+        console.log(`my name: ${this.name} my age : ${this.age} my city: ${this.city}`);
+    }
+};
+obj.print();
+
+
+
