@@ -7,5 +7,8 @@ const genOtp = () => {
     console.log(`OTP: ${Math.round(a)} ${Math.round(b)} ${Math.round(c)} ${Math.round(d)}`);
 
 }
-
 genOtp();
+
+
+const result = Math.pow(2, 3);
+console.log(result);
