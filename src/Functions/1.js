@@ -1,3 +1,8 @@
+function show(){
+    return console.log("hi");
+}
+show();
+
 const add = (a, b) => {
     return a * b;
 };
