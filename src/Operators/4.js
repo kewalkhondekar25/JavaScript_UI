@@ -9,3 +9,7 @@ console.log(a * c);
 
 let d = "k";
 console.log(a * d);
+
+//exponent
+console.log(2**3);
+console.log(Math.pow(2, 3));
