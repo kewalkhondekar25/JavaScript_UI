@@ -12,3 +12,8 @@ console.log(a % d);
 
 let e = false;
 console.log(a % e);//infinity (can't divide anything by zero)
+
+
+
+
+console.log(`modulus: ${10 % 2}`);

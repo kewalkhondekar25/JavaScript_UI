@@ -11,5 +11,5 @@ let d = "k";
 console.log(a * d);
 
 //exponent
-console.log(2**3);
+console.log(2**3);  //2*2*2
 console.log(Math.pow(2, 3));

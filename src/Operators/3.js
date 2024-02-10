@@ -12,6 +12,6 @@ let m = 10;
 let n = "a";
 console.log(m - n);//NaN
 
-let k = 2;
+let k = 20;
 let l = "2";
 console.log(k - l);
