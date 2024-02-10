@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pickDate(){
+            var date = new Date(document.getElementById("Date").value);
+            document.querySelector("p").innerHTML = date.toLocaleDateString();
+        }
+    </script>
+</head>
+<body>
+    <input type="date" onchange="pickDate()" id="Date">
+    <p></p>
+</body>
+</html>
