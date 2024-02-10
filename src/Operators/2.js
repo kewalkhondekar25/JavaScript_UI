@@ -2,6 +2,13 @@ const x = 10;
 const y = true;
 console.log(x + y);
 
+const Alpha = "a";
+console.log(x + Alpha); 
+
+console.log(y + Alpha);
+
+const False = false;
+console.log(y + False);
 
 const a = 10;
 const b = undefined;
