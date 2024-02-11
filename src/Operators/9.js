@@ -13,3 +13,15 @@ if(x === y){
 }else{
     console.log("not equal");
 }
+
+if(x != y){
+    console.log("true");
+}else{
+    console.log("false");
+}
+
+if(x !== y){
+    console.log("true");
+}else{
+    console.log("false");
+}

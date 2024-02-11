@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var infos = [
+            {
+                user: "arjun",
+                password: "arjun123"
+            },
+            {
+                user: "krishna",
+                password: "krishna123"
+            }
+        ];
+
+        function handleSubmit(){
+            var userName = document.getElementById("userName").value;
+            var pwd = document.getElementById("pwd").value;
+            
+            for(var info of infos){
+                if(userName === info.user && pwd === info.password){
+                    document.querySelector("p").innerHTML = "Login Success";
+                    break;
+                }else{
+                    document.querySelector("p").innerHTML = "Invalid credentials";
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" id="userName"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="pwd"></dd>
+    </dl>
+    <button onclick="handleSubmit()">Login</button>
+    <p></p>
+</body>
+</html>

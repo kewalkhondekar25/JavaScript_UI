@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userNames = [
+            {
+                name: "arjun",
+            },
+            {
+                name: "krishna"
+            },
+            {
+                name: "arjun1"
+            },
+            {
+                name: "krishna1"
+            }
+        ];
+        function handleKeyUp(){
+            var newName = document.getElementById("Name").value;
+            for(var users of userNames){
+                if(users.name === newName){
+                    document.querySelector("p").innerHTML = "User Name already Exist";
+                    break;
+                }else{
+                    document.querySelector("p").innerHTML = "User Name accepted"
+                }
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Enter a User Name</dt>
+        <dd><input type="text" id="Name" onkeyup="handleKeyUp()"></dd>
+    </dl>
+    <p></p>
+</body>
+</html>
