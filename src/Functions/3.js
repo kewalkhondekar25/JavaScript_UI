@@ -1,3 +1,4 @@
+//callback
 function loginUser(userName, password, success, failure){
     if(userName == "arjun" && password == "arjun11")
     {
