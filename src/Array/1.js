@@ -20,6 +20,7 @@ map
 let currency = [1, 25, 69, 77, 88, 99, 101];
 
 console.log(currency.join("-->"));
+console.log("slice");
 console.log(currency.slice(1, 4));
 
 console.log(currency.filter((value) => {
