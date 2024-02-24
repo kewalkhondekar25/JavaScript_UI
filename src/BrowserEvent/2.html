@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function DataBaseOperation(obj, e){
+            if(obj.name == "insert"){
+                console.log("INSERT DONE");
+            }else if(obj.name == "delete"){
+                console.log("DELETE DONE");
+            }else if(obj.name == "update"){
+                console.log("UPDATE DONE");
+            }
+        }   
+    </script>
+</head>
+<body>
+    <button name="insert" onclick="DataBaseOperation(this, event)">Inser</button>
+    <button name="delete" onclick="DataBaseOperation(this, event)">Delete</button>
+    <button name="update" onclick="DataBaseOperation(this, event)">Update</button>
+</body>
+</html>

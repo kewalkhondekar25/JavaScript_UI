@@ -11,3 +11,4 @@ function print1(){
     console.log(`x: ${x}; y: ${y}`);
 }
 print1();
+

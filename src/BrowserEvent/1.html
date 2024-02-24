@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function PrintMe(obj, e) {
+            document.write(`
+                name: ${obj.name}<br>
+                id: ${obj.id}<br> 
+                className: ${obj.className}<br>
+
+                x: ${e.clientX}
+                y: ${e.clientY}
+            `)
+        }
+        function handleChange(obj, e) {
+            console.log(e.target.value);
+        }
+
+    </script>
+</head>
+
+<body>
+    <button name="print btn" id="69" class="btn btn-primary" onclick="PrintMe(this, event, 'this is my msg')">Print
+    </button>
+</body>
+
+</html>
