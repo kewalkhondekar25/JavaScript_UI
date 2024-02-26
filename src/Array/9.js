@@ -13,5 +13,7 @@ for( let i = 0; i < arr.length; i++){
 //2
 //3
 //4
-
+for(var item of arr){
+    console.log(`for of: ${item}`);
+}
 arr.forEach( item => console.log(item))
