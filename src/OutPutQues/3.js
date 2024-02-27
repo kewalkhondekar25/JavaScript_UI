@@ -1,16 +1,23 @@
 myFun();
 
-var myFun = () => {
+var myFun = function(){
     console.log("First");
 }
 
 myFun();
 
-const myFun = () => {
+function myFun(){
     console.log("Second");
 }
 
 myFun();
 
 //GEC
-//m p       //code
+//mp                                                   //code
+//var myfunc : func() {'first'}            
+
+//output
+
+//second
+//first
+//first

@@ -1,10 +1,10 @@
 //temporal dead zone
 
-// age = 69;
+age = 69;
 
-// console.log(age);
+console.log(age);
 
-// let age = 99;
+let age = 99;
 
 //TDZ
 
