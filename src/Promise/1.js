@@ -52,3 +52,6 @@ new Promise((resolve, reject) => {
 .catch((error) => {
     console.log(error);
 })
+.finally(() => {
+    console.log("promise finally either resolved or rejected");
+})
