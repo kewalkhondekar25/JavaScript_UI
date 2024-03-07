@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="increment_btn">Increment</button>
+    <p>Button Pressed <span class="increment_press">0</span></p>
+    <p>Triggered <span class="increment_count">0</span></p>
+
+    <script>
+        const btn = document.querySelector(".increment_btn");
+        const btnPress = document.querySelector(".increment_press");
+        const count = document.querySelector(".increment_count");
+
+        var pressedCount = 0;
+        var triggerCount = 0;
+
+        //debounce polyfills
+        const myDebounce =(cb, d) => {
+            let timer;
+            return function(...args){
+                if(timer){
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(() => {
+                    cb(...args);
+                }, d);
+            }
+        }
+
+        const debouncedCount = myDebounce(() => {
+            count.innerHTML = ++triggerCount;
+        }, 800)
+
+        btn.addEventListener("click", () => {
+            btnPress.innerHTML = ++pressedCount;
+            debouncedCount();
+        })
+    </script>
+</body>
+</html>
