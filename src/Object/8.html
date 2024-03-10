@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const loadMeals = () => {
+            fetch("https://vegan-meals-api.vercel.app/api/v1/meals")
+            .then(res => res.json())
+            .then(data => {
+                for(var meals of data){
+                    // console.log(meals);
+                    var pic = document.createElement("img");
+                    var title = document.createElement("h3");
+                    
+                    title.innerHTML = meals.title;
+                    pic.src = meals.image;
+                    pic.height = "300"
+                    pic.width = "200"
+
+                    document.getElementById("card").appendChild(title);
+                    document.getElementById("card").appendChild(pic);
+
+                }
+            })
+        }
+    </script>
+</head>
+<body onload="loadMeals()">
+    <div id="card">
+
+    </div>
+</body>
+</html>
