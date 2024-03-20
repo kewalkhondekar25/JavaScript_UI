@@ -1,0 +1,5 @@
+//closure
+
+const outer = () => {
+    var
+}
